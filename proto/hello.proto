@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package hellopb;
+
+service HelloService {
+  rpc Hello (HelloRequest) returns (HelloResponse);
+  rpc IndirectHello (HelloRequest) returns (HelloResponse);
+  rpc RandomError (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}
